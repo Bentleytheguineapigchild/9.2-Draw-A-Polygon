@@ -16,28 +16,27 @@ screen.setup(width = 800, height = 800)
 pen = Turtle()
 pen.hideturtle()
 pen.speed(0)
-number_of_sides = int(input("how many sides are there?"))
 while True:
-    sides = int(input("enter the number of sides that the polygons have "))
+    number_of_sides = int(input("enter the number of sides that the polygons have "))
+    
     pen.clear()
-    if sides <3:
+    if number_of_sides <3:
         pen.write("error polygons have more than 3 sides")
-    elif sides != 4:
-       regular_polygon(pen,sides)
-    else: 
-        number_of_sides = int(input("how many sides are there?"))
-        if number_of_sides <3:
-            print("this is unknown")
-        elif number_of_sides == 3:
-            print("this is a triangle")
-        elif number_of_sides == 4:
-            print("this is a Quadrilateral")
-        elif number_of_sides == 5:
-            print("this is a Pentagon")
-        elif number_of_sides == 6:
-            print("this is a Hexagon")
-        else:   print("this is unknown")
-        if number_of_sides == 4:
+    elif number_of_sides != 4:
+        regular_polygon(pen,number_of_sides)
+    else:
+        # Code for a quadrilateral
+        number_of_points = int(input("how many sides are parallel"))
+    if number_of_points <= 1:
+        print("this is an unknown quadrilateral")
+    elif number_of_points == 2 and number_of_sides !=4:
+        print("this is a trapezoid")
+    elif number_of_points == 4 and number_of_sides != 4:
+        print("this is a parallelogram")
+    elif number_of_points == 4 and number_of_sides ==4:
+        print("this is a rectangle")
+    else: print("this is a square")
+        
 
 
 
